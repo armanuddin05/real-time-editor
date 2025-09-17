@@ -6,7 +6,7 @@ Word editor, includes collaboration of over 50 people, and real-time updates. Un
 ## Todo
 
 ### Initialization
-- [ ] Initial Commit
+- [X] Initial Commit
 - [ ] PostgreSQL/DB setup with Prisma (vercel neon postgres)
 
 
@@ -59,7 +59,7 @@ Word editor, includes collaboration of over 50 people, and real-time updates. Un
 - [ ] Implement document export (PDF, Word, etc.)
 - [ ] Add syntax highlighting for code documents
 - [ ] Create commenting and suggestion system
-- [ ] - [ ] Implement keyboard shortcuts and accessibility features
+- [ ] Implement keyboard shortcuts and accessibility features
 
 
 ### Write Tests
