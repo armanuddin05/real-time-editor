@@ -7,13 +7,16 @@ Word editor, includes collaboration of over 50 people, and real-time updates. Un
 
 ### Initialization
 - [X] Initial Commit
-- [ ] PostgreSQL/DB setup with Prisma (vercel neon postgres)
+- [X] PostgreSQL/DB setup with Prisma (vercel prisma serverless postgres)
 
 
 ### Infrastructure
-- [ ] npm install socket.io socket.io-client @types/socket.io
-- [ ] Socket.io Server custom Next API route in pages/api/socket.io
-- [ ] Socket.io connection in React hook
+- [N/A] npm install socket.io socket.io-client @types/socket.io
+- [N/A] Socket.io Server custom Next API route in pages/api/socket.io
+- [N/A] Socket.io connection in React hook
+*Update: used SSE server not socket.io, socket causes problems on vercel serverless*
+- [X] Set up SSE Next API route
+- [X] React hook set up for SSE server
 
 ### OT / CRDT
 - [ ] Choose libraries like sharedb, yjs, ot.js
