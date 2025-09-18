@@ -5,8 +5,8 @@ const connections = new Map<string, ReadableStreamDefaultController<Uint8Array>>
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const documentId = searchParams.get('documentId') || 'default';
-  const userId = searchParams.get('userId') || Math.random().toString(36).substr(2, 9);
+  const documentId = searchParams.get('documentId') ?? 'default';
+  const userId = searchParams.get('userId') ?? Math.random().toString(36).substr(2, 9);
 
   const stream = new ReadableStream({
     start(controller) {
@@ -61,8 +61,24 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { documentId, type, data, userId } = body;
+    const body: unknown = await request.json();
+    
+    // Type guard to ensure body has the expected structure
+    if (typeof body !== 'object' || body === null) {
+      throw new Error('Invalid request body');
+    }
+    
+    const requestBody = body as {
+      documentId?: string;
+      type?: string;
+      data?: unknown;
+      userId?: string;
+    };
+
+    const documentId = requestBody.documentId ?? 'default';
+    const type = requestBody.type ?? 'unknown';
+    const data = requestBody.data;
+    const userId = requestBody.userId ?? 'anonymous';
 
     // Broadcast the message to all connections in this document
     broadcastToDocument(documentId, {
