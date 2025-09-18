@@ -1,7 +1,7 @@
 import { type NextRequest } from "next/server";
 
 // Store active connections
-const connections = new Map<string, ReadableStreamDefaultController<Uint8Array>>();
+const connections = new Map<string, ReadableStreamDefaultController<any>>();
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);

@@ -52,7 +52,8 @@ export const useSSE = (): UseSSEReturn => {
 
     eventSource.onmessage = (event) => {
       try {
-        const message: SSEMessage = JSON.parse(event.data);
+        const data: string = event.data as string;
+        const message: SSEMessage = JSON.parse(data) as SSEMessage;
         console.log('SSE message received:', message);
         
         setMessages(prev => [...prev.slice(-49), message]); // Keep last 50 messages
@@ -112,19 +113,19 @@ export const useSSE = (): UseSSEReturn => {
   }, [userId]);
 
   const sendDocumentChange = useCallback((change: unknown) => {
-    void sendMessage('document-change', change);
-  }, [sendMessage]);
+  sendMessage('document-change', change).catch(console.error);
+}, [sendMessage]);
 
-  const sendCursorUpdate = useCallback((
-    position: { line: number; column: number },
-    selection?: { start: { line: number; column: number }; end: { line: number; column: number } }
-  ) => {
-    void sendMessage('cursor-update', { position, selection });
-  }, [sendMessage]);
+const sendCursorUpdate = useCallback((
+  position: { line: number; column: number },
+  selection?: { start: { line: number; column: number }; end: { line: number; column: number } }
+) => {
+  sendMessage('cursor-update', { position, selection }).catch(console.error);
+}, [sendMessage]);
 
-  const sendUserTyping = useCallback((isTyping: boolean) => {
-    void sendMessage('user-typing', { isTyping });
-  }, [sendMessage]);
+const sendUserTyping = useCallback((isTyping: boolean) => {
+  sendMessage('user-typing', { isTyping }).catch(console.error);
+}, [sendMessage]);
 
   // Cleanup on unmount
   useEffect(() => {

@@ -101,14 +101,14 @@ export const SSETest = () => {
             />
             <button
               onClick={handleSendChange}
-              disabled={!isConnected || !testMessage.trim()}
+              disabled={!(isConnected ?? false) || !(testMessage.trim() ?? '')}
               className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Send Change
             </button>
             <button
               onClick={handleSendMessage}
-              disabled={!isConnected || !testMessage.trim()}
+              disabled={!(isConnected ?? false) || !(testMessage.trim() ?? '')}
               className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Send Chat
@@ -132,7 +132,7 @@ export const SSETest = () => {
                 <span className="text-blue-300 ml-2">{message.type}:</span>
                 <span className="ml-2">
                   {message.fromUserId && <span className="text-yellow-300">from {message.fromUserId}: </span>}
-                  {JSON.stringify(message.data || message.userId || 'connection event')}
+                  {JSON.stringify(message.data ?? message.userId ?? 'connection event')}
                 </span>
               </div>
             ))}
