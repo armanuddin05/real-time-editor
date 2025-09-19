@@ -27,7 +27,12 @@ export const useSSE = (): UseSSEReturn => {
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [messages, setMessages] = useState<SSEMessage[]>([]);
-  const [userId] = useState(() => Math.random().toString(36).substr(2, 9));
+  //const [userId] = useState(() => Math.random().toString(36).substr(2, 9));
+  const [userId, setUserId] = useState('');
+
+    useEffect(() => {
+    setUserId(Math.random().toString(36).substr(2, 9));
+    }, []);
   
   const eventSourceRef = useRef<EventSource | null>(null);
   const currentDocumentRef = useRef<string | null>(null);

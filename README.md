@@ -1,6 +1,6 @@
 # Real Time Collaborative Editor
 
-Word editor, includes collaboration of over 50 people, and real-time updates. Unique feature: animated diagrams for better visualization.
+Word editor, includes collaboration of over 50 people, and real-time updates. Unique feature: animated diagrams for better visualization; target is ease and flexibility of work presentations.
 
 
 ## Todo
@@ -11,9 +11,9 @@ Word editor, includes collaboration of over 50 people, and real-time updates. Un
 
 
 ### Infrastructure
-- [N/A] npm install socket.io socket.io-client @types/socket.io
-- [N/A] Socket.io Server custom Next API route in pages/api/socket.io
-- [N/A] Socket.io connection in React hook
+- [X] npm install socket.io socket.io-client @types/socket.io
+- [X] Socket.io Server custom Next API route in pages/api/socket.io
+- [X] Socket.io connection in React hook
 
 #### Update: used SSE server not socket.io, socket causes problems on vercel serverless
 
@@ -21,13 +21,13 @@ Word editor, includes collaboration of over 50 people, and real-time updates. Un
 - [X] React hook set up for SSE server
 
 ### OT / CRDT
-- [ ] Choose libraries like sharedb, yjs, ot.js
-- [ ] Install chosen library: npm install yjs y-websocket (if using Yjs)
-- [ ] Create doc synchronization logic
+- [X] Choose libraries like sharedb, yjs, ot.js
+- [X] Install chosen library: npm install yjs y-websocket (if using Yjs)
+- [X] Create doc synchronization logic
 
 ### Editor Component
-- [ ] Choose editor library: Monaco Editor, CodeMirror, or Quill
-- [ ] Install: npm install @monaco-editor/react (if using Monaco)
+- [X] Choose editor library: Monaco Editor, CodeMirror, or Quill
+- [X] Install: npm install @monaco-editor/react (if using Monaco)
 - [ ] Create reusable editor component with TypeScript support
 - [ ] Implement basic text editing functionality
 

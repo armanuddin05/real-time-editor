@@ -3,7 +3,8 @@
 //import { LatestPost } from "~/app/_components/post";
 //import { auth } from "~/server/auth";
 //import { HydrateClient } from "~/trpc/server";
-import { SSETest } from "~/components/SSETest";
+//import { SSETest } from "~/components/SSETest";
+import { YjsTest } from "~/components/YjsTest";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
           Real-time <span className="text-[hsl(280,100%,70%)]">Editor</span>
         </h1>
         
-        <SSETest />
+        <YjsTest />
         
       </div>
     </main>
