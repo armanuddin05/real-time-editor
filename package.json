@@ -1,5 +1,5 @@
 {
-  "name": "Editor",
+  "name": "real-time-editor",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -39,6 +39,7 @@
     "socket.io-client": "^4.8.1",
     "superjson": "^2.2.1",
     "y-monaco": "^0.1.6",
+    "y-protocols": "^1.0.6",
     "yjs": "^13.6.27",
     "zod": "^3.24.2"
   },

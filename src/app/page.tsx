@@ -4,7 +4,16 @@
 //import { auth } from "~/server/auth";
 //import { HydrateClient } from "~/trpc/server";
 //import { SSETest } from "~/components/SSETest";
-import { YjsTest } from "~/components/YjsTest";
+//import { YjsTest } from "~/components/YjsTest";
+"use client";
+
+import dynamic from "next/dynamic";
+
+const MonacoCollaborativeTest = dynamic(
+  () => import("~/components/MonacoCollaborativeTest").then(mod => ({ default: mod.MonacoCollaborativeTest })),
+  { ssr: false }
+);
+
 
 export default function Home() {
   return (
@@ -14,7 +23,7 @@ export default function Home() {
           Real-time <span className="text-[hsl(280,100%,70%)]">Editor</span>
         </h1>
         
-        <YjsTest />
+        <MonacoCollaborativeTest />
         
       </div>
     </main>
