@@ -1,6 +1,6 @@
 # Real Time Collaborative Editor
 
-Word editor, includes collaboration of over 50 people, and real-time updates. Unique feature: animated diagrams for better visualization; target is ease and flexibility of work presentations.
+Code editor, includes collaboration of over 50 people, and real-time updates. Unique feature: collaborative debugging.
 
 
 ## Todo
@@ -28,14 +28,14 @@ Word editor, includes collaboration of over 50 people, and real-time updates. Un
 ### Editor Component
 - [X] Choose editor library: Monaco Editor, CodeMirror, or Quill
 - [X] Install: npm install @monaco-editor/react (if using Monaco)
-- [ ] Create reusable editor component with TypeScript support
-- [ ] Implement basic text editing functionality
+- [X] Create reusable editor component with TypeScript support
+- [X] Implement basic text editing functionality
 
 ### Real-time Collab
-- [ ] Connect editor to your OT/CRDT system
-- [ ] Implement user cursors and selections visualization
-- [ ] Add user presence indicators (who's currently editing)
-- [ ] Handle user join/leave events
+- [X] Connect editor to your OT/CRDT system
+- [X] Implement user cursors and selections visualization
+- [X] Add user presence indicators (who's currently editing)
+- [X] Handle user join/leave events
 
 ### Configure NextAuth.js
 
@@ -51,6 +51,35 @@ Word editor, includes collaboration of over 50 people, and real-time updates. Un
 - [ ] Implement document versioning/history
 - [ ] Create document listing and search functionality
 
+### Collaborative Debugging Infrastructure
+- [ ] Design debugging session data models (breakpoints, variables, call stacks)
+- [ ] Create debugging session API endpoints for sharing debug state
+- [ ] Implement real-time debugging event synchronization via SSE
+- [ ] Add debugging session management (create, join, leave sessions)
+
+### Debug State Synchronization
+- [ ] Sync breakpoints across users in real-time
+- [ ] Share variable inspection and values between collaborators
+- [ ] Broadcast execution state changes (paused, resumed, stepped)
+- [ ] Implement collaborative watch expressions and variable modification
+
+### Debugging UI Components
+- [ ] Create shared breakpoint indicators in Monaco editor
+- [ ] Build collaborative debug panel with shared variable inspection
+- [ ] Add real-time call stack visualization for all users
+- [ ] Implement shared debug console with multi-user input/output
+
+### Debug Session Management
+- [ ] Create debug room joining/leaving functionality
+- [ ] Add debug session permissions (who can control execution)
+- [ ] Implement debug session history and replay features
+- [ ] Handle debug session cleanup and state management
+
+### Advanced Debugging Features
+- [ ] Add collaborative step-through debugging controls
+- [ ] Implement shared conditional breakpoints
+- [ ] Create multi-user debugging annotations and comments
+- [ ] Add debugging session recording and playback
 
 ### Build Core UI Components
 
